@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Primeiro Exemplo</title>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+    <!-- datatable -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <!-- style padrao -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+</head>
+<body>
+    <table cellpadding="1" cellspacing="1" id="myTable" class="display">
+    </table>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*var data = [
+                [
+                    'Ederson Fernandes',
+                    '12345-000',
+                    'Rua X',
+                    'POA',
+                    'RS',
+                ]
+            ];*/
+            var json = [
+                {
+                    'obj_Nome' : 'Ederson Fernandes',
+                    'obj_CEP' : '12345-000',
+                    'obj_Logradouro' : 'Rua X',
+                    'obj_Cidade' : 'POA',
+                    'obj_Estado' : 'RS',
+                }
+            ];
+
+            $("#myTable").DataTable({
+                // Definir cabeçalho das colunas na tabela sem colunas.
+                columns: [
+                    {title: 'Nome', data: 'obj_Nome'},
+                    {title: 'CEP', data: 'obj_CEP'},
+                    {title: 'Logradouro', data: 'obj_Logradouro'},
+                    {title: 'Cidade', data: 'obj_Cidade'},
+                    {title: 'Estado', data: 'obj_Estado'},
+                ],
+                // Adicionando dados com javascript.
+                // data: data,
+                // Adicionando dados json.
+                data: json,
+            });
+        });
+    </script>
+</body>
+</html>
