@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Primeiro Exemplo</title>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+    <!-- datatable -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <!-- style padrao -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+</head>
+<body>
+    <table cellpadding="1" cellspacing="1" id="myTable" class="display">
+    </table>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var json = [
+                {
+                    'obj_Nome' : 'Ederson Fernandes',
+                    'obj_CEP' : '12345-000',
+                    'obj_Logradouro' : 'Rua X',
+                    'obj_Cidade' : 'POA',
+                    'obj_Estado' : 'RS',
+                }
+            ];
+
+            $("#myTable").DataTable({
+                // Definir cabeçalho das colunas na tabela sem colunas.
+                columns: [
+                    {title: 'Nome', data: 'obj_Nome'},
+                    {title: 'CEP', data: 'obj_CEP'},
+                    {title: 'Logradouro', data: 'obj_Logradouro'},
+                    {title: 'Cidade', data: 'obj_Cidade'},
+                    {title: 'Estado', data: 'obj_Estado'},
+                ],
+                // Adicionando dados json.
+                data: json,
+                // Desabilitar paginação.
+                // paging: true,
+                // Desabilitar seleção de número por páginas.
+                // lengthChange: false,
+                // Desabilitar ordenação.
+                // ordering: false,
+                // Não exibir informações.
+                // info: false,
+                // Traduzir.
+                language: {
+                    info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                    infoEmpty: "Sem registros",
+                    infoFiltered: 'filtrados de _MAX_ registros',
+                    emptyTable: "Nenhum registro avaliado na tabela",
+                    zeroRecords: "Nenhum registro encontrado para a busca",
+                    lengthMenu: "Mostrando _MENU_ registros",
+                    searchPlaceHolder: 'Filtro',
+                    search: 'Digite sua busca:',
+                    paginate: {
+                        first: '<<',
+                        last: '>>',
+                        previous: '<',
+                        next: '>'
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
