@@ -1,4 +1,5 @@
-# ...
+# datatable-001-sofn-exemplos
 
 # Anotações:
-- ...
+- Gerar dados para testes.
+    https://www.generatedata.com/
