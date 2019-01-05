@@ -3,3 +3,7 @@
 # Anotações:
 - Gerar dados para testes.
     https://www.generatedata.com/
+- Pegando dados via AJAX.
+    - Instalando e rodando o servidor.
+        npm install -g lite-server
+        lite-server.cmd

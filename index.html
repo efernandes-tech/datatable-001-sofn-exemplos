@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+</head>
+<body>
+
+<table id="my-table" class="display"></table>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var datatable = $('#my-table').DataTable({ //dataTable também funcionar
+            ajax: 'http://localhost:3000/data.json',
+            stateSave: true,
+            columns: [
+                {title: 'Nome', data: 'Nome'},
+                {title: 'CEP', data: 'CEP'},
+                {title: 'Logradouro', data: 'Logradouro'},
+                {title: 'Cidade', data: 'Cidade'},
+                {title: 'Estado', data: 'Estado'},
+            ]
+        });
+    });
+</script>
+</body>
+</html>
