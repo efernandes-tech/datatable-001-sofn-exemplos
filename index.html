@@ -15,16 +15,17 @@
 <script type="text/javascript">
     $(document).ready(function () {
         var datatable = $('#my-table').DataTable({
-            ajax: 'http://localhost:3000/data.json',
+            ajax: 'http://localhost:3000/data-server-side.json',
+            serverSide: true,
             // stateSave: true,
             pageLength: 20,
-            lengthMenu: [[20,50,100,-1],["Pouco","Médio","Muito","Todos"]],
+            lengthMenu: [[20, 50, 100, -1], ["Pouco", "Médio", "Muito", "Todos"]],
             columns: [
                 {title: 'Nome', data: 'Nome'},
                 {title: 'CEP', data: 'CEP'},
                 {title: 'Logradouro', data: 'Logradouro'},
                 {title: 'Cidade', data: 'Cidade'},
-                {title: 'Estado', data: 'Estado', defaultContent: '<strong>sem estado</strong>'},
+                {title: 'Estado', data: 'Estado', defaultContent: '<strong>sem estado</strong>'}
             ]
         });
     });
